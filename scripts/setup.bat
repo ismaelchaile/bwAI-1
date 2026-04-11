@@ -1,7 +1,4 @@
 cd..
-mkdir IE-GDG-ADK
-cd IE-GDG-ADK
-
 :: Windows usually uses 'python' or 'py' instead of 'python3.12'
 python -m venv .adk_env
 

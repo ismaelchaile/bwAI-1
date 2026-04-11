@@ -1,7 +1,4 @@
 cd..
-New-Item -ItemType Directory -Force -Name IE-GDG-ADK
-Set-Location -Path IE-GDG-ADK
-
 # Windows usually uses 'python' or 'py' instead of 'python3.12'
 python -m venv .adk_env
 

@@ -1,6 +1,4 @@
 cd ..
-mkdir IE-GDG-ADK
-cd IE-GDG-ADK
 python3.12 -m venv .adk_env
 source .adk_env/bin/activate
 python --version
