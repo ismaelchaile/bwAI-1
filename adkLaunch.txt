@@ -1,0 +1,11 @@
+Activates the ADK environment, copy and paste one of the next command in the terminal 
+according to your OS.
+
+* Linux & Mac
+source .adk_env/bin/activate
+
+* Windows
+call .adk_env\Scripts\activate.bat
+
+* Windows Powershell
+.\.adk_env\Scripts\Activate.ps1

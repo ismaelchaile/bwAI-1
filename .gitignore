@@ -1,0 +1,7 @@
+.adk/
+.adk_env/
+.cache.sqlite
+.env
+__pycache__
+deprecated/
+.ssh/

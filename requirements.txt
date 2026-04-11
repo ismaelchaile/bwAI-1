@@ -1,0 +1,9 @@
+google-adk==1.28.0
+google-adk[extensions]
+litellm
+# Needed for weather_aware_planner
+openmeteo-requests
+requests-cache 
+retry-requests 
+numpy 
+pandas 
