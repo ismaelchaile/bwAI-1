@@ -2,7 +2,7 @@ cd ..
 python3.12 -m venv .adk_env
 source .adk_env/bin/activate
 python --version
-pip install -r ../requirements.txt
+pip install -r requirements.txt
 adk --version
 echo  '
 # Take out next 2 comments to use Gemini API key

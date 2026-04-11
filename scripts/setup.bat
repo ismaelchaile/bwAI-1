@@ -6,7 +6,7 @@ python -m venv .adk_env
 call .adk_env\Scripts\activate.bat
 
 python --version
-pip install -r ..\requirements.txt
+pip install -r requirements.txt
 adk --version
 
 :: Create and append to the .env file line by line

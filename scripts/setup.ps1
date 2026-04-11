@@ -6,7 +6,7 @@ python -m venv .adk_env
 .\.adk_env\Scripts\Activate.ps1
 
 python --version
-pip install -r ..\requirements.txt
+pip install -r requirements.txt
 adk --version
 
 # Create the multiline string and output it to .env
