@@ -18,31 +18,31 @@ To comply with ADK requirements, your custom agents must follow this exact direc
 If you are using Windows, ensure you have the necessary tools installed before proceeding. Linux and macOS users can skip to the Installation section.
 
 Install Git:
-Open Command Prompt and run:
+Open the <b>Command Prompt Terminal</b> and run:
 
-DOS
 ```
 winget install --id Git.Git -e --source winget
 ```
-Alternatively, download it from your web browser via git-scm.com/install/windows.
-
-<b>Important</b>: Close and reopen your terminal after installation.
+Alternatively, download it from your web browser via https://git-scm.com/install/windows.
 
 Install Python 3.12:
 If you don't have Python installed, you can search for and install version 3.12:
 
-DOS
 ```
 winget search Python.Python
 winget install -e --id Python.Python.3.12
 ```
 <b>Important</b>: Close and reopen your terminal after installation.
 
-Update PowerShell Execution Policy:
+Once you reopened the Command Prompt terminal, run next commands for testing that git and python is working:
+```
+git
+python --version
+```
+
+Update PowerShell Execution Policy (only if you use PowerShell in the next installation step):
 If you have never run a PowerShell script before, you need to enable local script execution.
-
 Open PowerShell as Administrator (Search > Right-click > "Run as Administrator").
-
 Run the following command in PowerShell:
 ```
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
@@ -61,15 +61,15 @@ For Linux & macOS run:
 ./setup.sh
 ```
 
-For Windows PowerShell:
+For Windows Command Prompt (preferred):
 ```
-.\setup.ps1
+setup.bat
 ```
 #### OR
 
-For Windows Command Prompt:
+For Windows PowerShell:
 ```
-setup.bat
+.\setup.ps1
 ```
 
 ## 🔑 API Key Activation
@@ -79,22 +79,21 @@ Open the .env file in the root directory.
 
 Replace <b> your_api_key_here </b> with your  Gemini GCP API key.
 
-In Linux or macOS, navigate to the scripts folder and run the copyKey script:
+In Linux or macOS, move into the scripts folder and run the copyKey script:
 
 ```
 cd scripts
 ./copyKey.sh
 ```
+For Windows Command Prompt (preferred):
+```
+copyKey.bat
+```
+#### OR
 
 For Windows PowerShell:
 ```
 .\copyKey.ps1
-```
-#### OR
-
-For Windows Command Prompt:
-```
-copyKey.bat
 ```
 
 ## 🤖 Included Agents
