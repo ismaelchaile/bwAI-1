@@ -1,53 +1,156 @@
-* Keep next structure, it is requested to be as shown next by ADK:
-Expected directory structure:
-  <agents_dir>/
-    YOUR_AGENT_TYPE_FOLDER_NAME/
-      agent.py (with root_agent)
+Markdown
+# Google ADK Beginner
 
-* Installation
-- Move to the scripts folder and run the setup file according to your OS.
-- ./setup.sh --> run for install adk env and all packages in Linux and Mac
-- .\setup.ps1 or setup.bat --> run for install adk env and all packages in Windows
-- requirements.txt --> list of packages to install
+A beginner-friendly repository for exploring, testing, and building AI agents using the Google Agent Development Kit (ADK). This project includes several sample agents demonstrating different capabilities, from simple API calls to complex parallel routing.
 
-* API KEY activation
-- edit the file .env and replace your_api_key_here with the api key you get from GCP.
-- move inside scripts folder and run ./copyKey.sh (Linux & Mac compatible) 
+## 📂 Expected Directory Structure
 
-* Launch ADK environment
-- open adkLaunch.txt and copy & paste the command according to your OS
+To comply with ADK requirements, your custom agents must follow this exact directory structure:
 
-* Agents inside agents folder
-1) gAgent --> for testing a simple agent works with Gemini models with Vertex AI & API Key
-2) liteLLMagent --> for testing a simple agent working with Gemma 4 with Google API key and Ollama local models using LiteLLM.
-3) weatherAgent --> it uses LiteLLM + Gemma 4, and an agent tool using an external weather API (no API key needed)
-4) toolAgent --> it shows how an agent can use other agent as a tool
-5) subAgents --> it shows how a main/router agent delegates the user query to a sub agent
-6) parallelAgent --> it integrates parallel, sequential and sub agents in a sentence generator, additionally it shows the use of states and after_agent_callback for simple processing after the agent finish.
+```text
+<parent_agents_dir>/ (recommended name agents)
+  YOUR_AGENT_TYPE_FOLDER_NAME/
+    .env
+    __init__.py
+    agent.py (must contain the root_agent)
+```
 
-* How to run the agents:
-- From terminal (one specific agent):
-adk run agents/YOUR_AGENT_TYPE_FOLDER_NAME --> e.g. gAgent or liteLLMagent
+## ⚙️ Prerequisites (Windows Users Only)
+If you are using Windows, ensure you have the necessary tools installed before proceeding. Linux and macOS users can skip to the Installation section.
 
-- From web (selecting the agent in the web interface):
-./adkWeb.sh (cloudShell compatible) OR adk web agents
+Install Git:
+Open Command Prompt and run:
 
-* Window installations (if needed):
-- Install Git using the terminal Command Promot wiht the next command:
-winget install --id Git.Git -e --source winget --> IMPORTANT: close the terminal and open it again.
-- https://git-scm.com/install/windows --> Download using your web browser
-- Install Python 3.12 (if needed):
-winget search Python.Python --> For listing available Python versions
-winget install -e --id Python.Python.3.12 --> Install Python 3.12.10 version --> IMPORTANT: close the termminal and open it again
-- Powershell script security policy:
-If you have never run a PowerShell script on your computer before, you will likely get an error saying running scripts is disabled. You need to change your "Execution Policy" first.
-Open PowerShell as Administrator (search for PowerShell in the Start menu, right-click, and select "Run as Administrator").
-Run this command to allow local scripts to run safely:
+DOS
+```
+winget install --id Git.Git -e --source winget
+```
+Alternatively, download it from your web browser via git-scm.com/install/windows.
+
+<b>Important</b>: Close and reopen your terminal after installation.
+
+Install Python 3.12:
+If you don't have Python installed, you can search for and install version 3.12:
+
+DOS
+```
+winget search Python.Python
+winget install -e --id Python.Python.3.12
+```
+<b>Important</b>: Close and reopen your terminal after installation.
+
+Update PowerShell Execution Policy:
+If you have never run a PowerShell script before, you need to enable local script execution.
+
+Open PowerShell as Administrator (Search > Right-click > "Run as Administrator").
+
+Run the following command in PowerShell:
+```
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
 
-* How to cite this work and derived works:
-See APA and BibTeX formats or just use:
-by: Ismael Chaile, socialID: https://www.linkedin.com/in/ismaelchaile/
-Code-url: https://github.com/ismaelchaile/bwAI-1
-Date: April 2026
+## 🚀 Installation
+All dependencies are listed in requirements.txt. To set up the ADK environment and install the required packages automatically, run the setup script for your operating system.
+
+Navigate to the scripts folder:
+
+```
+cd scripts
+```
+For Linux & macOS run:
+```
+./setup.sh
+```
+
+For Windows PowerShell:
+```
+.\setup.ps1
+```
+#### OR
+
+For Windows Command Prompt:
+```
+setup.bat
+```
+
+## 🔑 API Key Activation
+To use the agents, you must configure your Google Cloud API key:
+
+Open the .env file in the root directory.
+
+Replace <b> your_api_key_here </b> with your  Gemini GCP API key.
+
+In Linux or macOS, navigate to the scripts folder and run the copyKey script:
+
+```
+cd scripts
+./copyKey.sh
+```
+
+For Windows PowerShell:
+```
+.\copyKey.ps1
+```
+#### OR
+
+For Windows Command Prompt:
+```
+copyKey.bat
+```
+
+## 🤖 Included Agents
+This repository contains several sample agents inside the <b>agents/</b> folder to help you learn different ADK patterns:
+
+1) gAgent: Tests a simple agent working with Gemini models using Vertex AI and an API Key.
+
+2) liteLLMagent: Demonstrates a simple agent working with Gemma 4 (via Google API key) and Ollama local models using LiteLLM.
+
+3) weatherAgent: Uses LiteLLM + Gemma 4 alongside an agent tool that fetches data from an external weather API (no API key required for the weather API).
+
+4) toolAgent: Shows how one agent can utilize another agent as a tool.
+
+5) subAgents: Demonstrates a Main/Router agent delegating a user query to a specialized Sub-Agent.
+
+6) parallelAgent: Integrates parallel, sequential, and sub-agents into a sentence generator. It also highlights the use of states and the after_agent_callback for simple post-processing.
+
+## 💻 Running the Agents
+First, ensure your ADK environment is active. If not active, open adkLaunch.txt and copy/paste the launch command specific to your OS.
+
+With ADK environment active, use the terminal or the web ui to run the agents
+
+From the Terminal command line (Specific Agent):
+From the root folder run:
+```
+adk run agents/YOUR_AGENT_TYPE_FOLDER_NAME
+(Example: adk run agents/gAgent or adk run agents/liteLLMagent)
+```
+
+From the Web Interface:
+The web UI allows you to interactively select and test your agents:
+
+
+Using the provided script (Cloud Shell, Mac & Linux)
+```
+./adkWeb.sh
+```
+
+OR using the native ADK command
+```
+adk web agents
+```
+
+For Windows (PowerShell or CMD):
+```
+adkWeb.bat
+```
+
+### 📝 Citation
+If you use this software or derived works in your research or projects, please cite it as follows:
+
 Title: Google ADK Beginner
+Author: Ismael Chaile
+LinkedIn: https://www.linkedin.com/in/ismaelchaile/
+Date: April 2026
+Repository: https://github.com/ismaelchaile/bwAI-1
+
+Note: For formal academic citations, please refer to the CITATION.cff file in this repository for APA and BibTeX formats.
