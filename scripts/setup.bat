@@ -7,7 +7,6 @@ call .adk_env\Scripts\activate.bat
 
 python --version
 pip install -r requirements.txt
-adk --version
 
 :: Create and append to the .env file line by line
 echo # Take out next 2 comments to use Gemini API key > .env
@@ -20,3 +19,7 @@ echo #GOOGLE_CLOUD_LOCATION="europe-west1" # e.g., us-central1 >> .env
 echo #GOOGLE_GENAI_USE_VERTEXAI=TRUE >> .env
 echo #gcloud auth application-default login --^> use previous command in the terminal to authenticate only once >> .env
 echo #gcloud auth application-default revoke --^> for logout from previous ADC login >> .env
+echo All installed, try to run the next command for checking all is ok: --> adk --version
+echo Update the .env file in the current folder with your API KEY, then move into scripts folder and run copyKey.bat
+
+adk --version

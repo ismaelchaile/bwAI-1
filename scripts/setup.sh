@@ -15,3 +15,5 @@ GOOGLE_API_KEY=your_api_key_here
 #GOOGLE_GENAI_USE_VERTEXAI=TRUE
 #gcloud auth application-default login --> use previous command in the terminal to authenticate only once
 #gcloud auth application-default revoke --> for logout from previous ADC login' >> ./.env
+echo 'All installed, try to run the next command for checking all is ok: --> adk --version'
+echo 'Update the .env file in the current folder with your API KEY, then move into scripts folder and run copyKey.sh'

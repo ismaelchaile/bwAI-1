@@ -1,3 +1,5 @@
+# If you receive a message error not allowing to run the script setup.ps1, copy and paste next command in PowerShell --> Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
 cd..
 # Windows usually uses 'python' or 'py' instead of 'python3.12'
 python -m venv .adk_env
@@ -7,7 +9,6 @@ python -m venv .adk_env
 
 python --version
 pip install -r requirements.txt
-adk --version
 
 # Create the multiline string and output it to .env
 $envText = @"
@@ -24,3 +25,8 @@ GOOGLE_API_KEY=your_api_key_here
 "@
 
 Add-Content -Path .\.env -Value $envText -Encoding UTF8
+
+adk --version
+
+Write-Host "All installed, try to run the next command for checking all is ok: --> adk --version"
+Write-Host "Update the .env file in the current folder with your API KEY, then move into scripts folder and run copyKey.ps1"
