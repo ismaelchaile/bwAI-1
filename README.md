@@ -31,3 +31,23 @@ adk run agents/YOUR_AGENT_TYPE_FOLDER_NAME --> e.g. gAgent or liteLLMagent
 
 - From web (selecting the agent in the web interface):
 ./adkWeb.sh (cloudShell compatible) OR adk web agents
+
+* Window installations (if needed):
+- Install Git using the terminal Command Promot wiht the next command:
+winget install --id Git.Git -e --source winget --> IMPORTANT: close the terminal and open it again.
+- https://git-scm.com/install/windows --> Download using your web browser
+- Install Python 3.12 (if needed):
+winget search Python.Python --> For listing available Python versions
+winget install -e --id Python.Python.3.12 --> Install Python 3.12.10 version --> IMPORTANT: close the termminal and open it again
+- Powershell script security policy:
+If you have never run a PowerShell script on your computer before, you will likely get an error saying running scripts is disabled. You need to change your "Execution Policy" first.
+Open PowerShell as Administrator (search for PowerShell in the Start menu, right-click, and select "Run as Administrator").
+Run this command to allow local scripts to run safely:
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+* How to cite this work and derived works:
+See APA and BibTeX formats or just use:
+by: Ismael Chaile, socialID: https://www.linkedin.com/in/ismaelchaile/
+Code-url: https://github.com/ismaelchaile/bwAI-1
+Date: April 2026
+Title: Google ADK Beginner
