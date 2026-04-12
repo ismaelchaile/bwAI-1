@@ -21,8 +21,10 @@ def check_prime(n):
             
     return True
 
+# Models starting with gemini/ need an Gemini API KEY
+# Models starting with ollama_chat/ need Ollama in your computer and the corresponding model downloaded
 root_agent = Agent(
-    model=LiteLlm(model="gemini/gemma-4-26b-a4b-it"),  # OR "ollama_chat/gpt-oss:20b" OR "gemini/gemma-4-26b-a4b-it", "gemini/gemma-4-31b-it"
+    model=LiteLlm(model="gemini/gemma-4-26b-a4b-it"),  # OR "ollama_chat/gpt-oss:20b" OR "ollama_chat/gemma4:e2b" "gemini/gemma-4-26b-a4b-it", "gemini/gemma-4-31b-it"
     name="roll_die_agent",
     description=(
         "An agent that can roll a die and check if the result is a prime numbers"

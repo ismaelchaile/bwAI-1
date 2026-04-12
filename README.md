@@ -1,4 +1,3 @@
-Markdown
 # Google ADK Beginner
 
 A beginner-friendly repository for exploring, testing, and building AI agents using the Google Agent Development Kit (ADK). This project includes several sample agents demonstrating different capabilities, from simple API calls to complex parallel routing.
@@ -143,6 +142,11 @@ For Windows (PowerShell or CMD):
 ```
 adkWeb.bat
 ```
+
+## ➕ Running ADK with local models
+You have as example the <b>liteLLMagent</b>, edit the agent.py and change the model according to the one you installed in your computer.
+You can install ollama from the next link:
+https://ollama.com/download
 
 ### 📝 Citation
 If you use this software or derived works in your research or projects, please cite it as follows:
