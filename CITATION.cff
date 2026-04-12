@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+author:
+- family-names: "Chaile"
+  given-names: "Ismael"
+  orcid: "https://www.linkedin.com/in/ismaelchaile/"
+title: "Google ADK Beginner"
+version: 0.1
+doi: https://www.linkedin.com/in/ismaelchaile/
+date-released: 2026-04-12
+url: "https://github.com/ismaelchaile/bwAI-1"
