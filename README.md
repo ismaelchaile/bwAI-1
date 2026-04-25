@@ -2,6 +2,31 @@
 
 A beginner-friendly repository for exploring, testing, and building AI agents using the Google Agent Development Kit (ADK). This project includes several sample agents demonstrating different capabilities, from simple API calls to complex parallel routing.
 
+## List of ADK features in this repo
+* Advanced ADK installation for local development in Linux/Mac/Windows, or cloud development at GCP Cloud Shell
+* Run of adk web UI and adk terminal UI
+* Per-agent .env setup
+* LLM agents
+* Sub-agents
+* Workflow agents: 
+  * sequential
+  * parallel
+  * hybrid (sequential + parallel)
+* Multi-tool calling: 
+  * Function Tools: 
+    * custom functions/methods in the code
+    * custom functions/methods in the code + APIs calls
+    * agent as a tool
+* LiteLLM integration, for multi-model local or cloud calling
+* Automatic multi-agent communications using output_key
+* Running of custom functions/methods when the agent ends its job, using after_agent_callback
+
+## 🗣️ Talk-workshop slides
+This repo is part of the talk-workshop about AI & Agents: from theory to practice you can find in the next url:
+https://aineth.ai/bwAI-1
+
+The slides of the talk are a useful companion of this repo and can help you to enable your Gemini API KEY in GCP.
+
 ## 📂 Expected Directory Structure
 
 To comply with ADK requirements, your custom agents must follow this exact directory structure:
